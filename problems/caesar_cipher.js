@@ -29,3 +29,5 @@ function caesarCipher(str, shift) {
     return encoded;
 
 }
+
+//alphabet in array
