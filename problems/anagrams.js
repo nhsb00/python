@@ -6,3 +6,19 @@
 // Examples:
 // anagrams('listen', 'silent') => true
 // anagrams('listen', 'potato') => false
+
+function anagrams(str1, str2) {
+    const letters = {};
+
+    str1.split("").forEach(char => {
+        if (!letters[char]) letters[char] = 0;
+        letters[char] += 1;   
+    })
+
+    str2.split("").forEach(char => {
+        if (!letters[char]) letters[char] = 0;
+        letters[char] -= 1;
+    })
+
+    return Object.values(letters).every(letterCount => letterCount === 0)
+}
